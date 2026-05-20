@@ -12,7 +12,7 @@
       "matchDatasources": ["docker"],
       "automerge": true,
       "automergeType": "branch",
-      "matchUpdateTypes": ["digest"],
+      "matchUpdateTypes": ["digest", "pinDigest"],
       "matchFileNames": [".devcontainer/devcontainer.json"],
       "ignoreTests": true
     }
