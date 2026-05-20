@@ -1,0 +1,10 @@
+app_identifier("com.mmalyska.homelabportal")
+
+apple_id(ENV["APPLE_ID"])
+itc_team_id(ENV["APP_STORE_CONNECT_TEAM_ID"])
+team_id(ENV["DEVELOPER_PORTAL_TEAM_ID"])
+
+for_platform :android do
+  json_key_file(ENV["GOOGLE_PLAY_JSON_KEY_PATH"])
+  package_name("com.mmalyska.homelabportal")
+end
