@@ -46,3 +46,5 @@ RUN yes | sdkmanager --licenses \
         "build-tools;${ANDROID_BUILD_TOOLS_VERSION}"
 
 RUN chmod -R 755 ${ANDROID_HOME}
+
+RUN sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin

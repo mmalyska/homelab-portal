@@ -2,7 +2,7 @@
   "name": "Homelab Portal",
   "image": "ghcr.io/mmalyska/homelab-portal-devcontainer:main@sha256:d18eba2b7f4c6f42b24e2db47982d63666c0c46d03533718615a817cbd1f7cf8",
   "initializeCommand": "test -f .devcontainer/devcontainer.env || cp .devcontainer/devcontainer.env.sample .devcontainer/devcontainer.env",
-  "postCreateCommand": "yarn install",
+  "postCreateCommand": "yarn install && chezmoi init --apply gh:mmalyska/dotfiles",
   "updateContentCommand": "yarn install",
   "runArgs": ["--env-file", ".devcontainer/devcontainer.env"],
   "secrets": {
