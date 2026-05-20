@@ -24,5 +24,8 @@ android/
 .env
 .env.local
 
+# Devcontainer local secrets
+.devcontainer/devcontainer.env
+
 # Misc
 *.orig.*

@@ -1,0 +1,6 @@
+{
+  "name": "homelab-portal-source",
+  "build": {
+    "dockerfile": "Dockerfile"
+  }
+}

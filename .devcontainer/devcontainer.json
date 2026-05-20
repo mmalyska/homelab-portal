@@ -1,0 +1,30 @@
+{
+  "name": "Homelab Portal",
+  "image": "ghcr.io/mmalyska/homelab-portal-devcontainer:main",
+  "initializeCommand": "test -f .devcontainer/devcontainer.env || cp .devcontainer/devcontainer.env.sample .devcontainer/devcontainer.env",
+  "postCreateCommand": "yarn install",
+  "updateContentCommand": "yarn install",
+  "runArgs": ["--env-file", ".devcontainer/devcontainer.env"],
+  "secrets": {
+    "ANDROID_DEBUG_KEYSTORE_PASSWORD": {
+      "description": "Optional: custom debug keystore password. Leave unset to use the default Android debug keystore."
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "msjsdiag.vscode-react-native",
+        "ms-vscode.vscode-typescript-next"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "typescript.preferences.importModuleSpecifier": "relative"
+      }
+    }
+  },
+  "remoteUser": "vscode",
+  "containerUser": "vscode"
+}
