@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "Homelab Portal",
+    "slug": "homelab-portal",
+    "version": "1.0.0",
+    "scheme": "homeportal",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.mmalyska.homelabportal"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#1e2327"
+      },
+      "package": "com.mmalyska.homelabportal"
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-web-browser"
+    ]
+  }
+}
