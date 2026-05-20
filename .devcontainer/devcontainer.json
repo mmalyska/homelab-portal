@@ -8,6 +8,9 @@
   "secrets": {
     "ANDROID_DEBUG_KEYSTORE_PASSWORD": {
       "description": "Optional: custom debug keystore password. Leave unset to use the default Android debug keystore."
+    },
+    "GITHUB_TOKEN": {
+      "description": "GitHub personal access token for gh CLI. In Codespaces, this is injected automatically."
     }
   },
   "customizations": {
