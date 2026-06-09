@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from "react-native";
 
 export default function ArgoCDScreen() {
   return (
@@ -9,6 +9,11 @@ export default function ArgoCDScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#111' },
-  text: { color: '#888', fontSize: 16 },
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#111",
+  },
+  text: { color: "#888", fontSize: 16 },
 });

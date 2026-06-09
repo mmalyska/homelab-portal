@@ -1,7 +1,7 @@
-import { Redirect } from 'expo-router';
-import { ActivityIndicator, View } from 'react-native';
-import { useConfig } from '../core/config/ConfigContext';
-import { useAuth } from '../core/auth/AuthContext';
+import { Redirect } from "expo-router";
+import { ActivityIndicator, View } from "react-native";
+import { useConfig } from "../core/config/ConfigContext";
+import { useAuth } from "../core/auth/AuthContext";
 
 export default function Index() {
   const { config, isLoading: configLoading } = useConfig();
@@ -9,7 +9,7 @@ export default function Index() {
 
   if (configLoading || authLoading) {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
         <ActivityIndicator size="large" />
       </View>
     );

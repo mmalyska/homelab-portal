@@ -1,11 +1,11 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { TokenSet } from './types';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { TokenSet } from "./types";
 
 const KEYS = {
-  accessToken: 'auth.at',
-  refreshToken: 'auth.rt',
-  idToken: 'auth.it',
-  expiresAt: 'auth.exp',
+  accessToken: "auth.at",
+  refreshToken: "auth.rt",
+  idToken: "auth.it",
+  expiresAt: "auth.exp",
 };
 
 export const saveTokens = async (tokens: TokenSet): Promise<void> => {

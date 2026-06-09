@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -8,27 +8,39 @@ import {
   ScrollView,
   KeyboardAvoidingView,
   Platform,
-} from 'react-native';
-import { router } from 'expo-router';
-import { useConfig } from '../core/config/ConfigContext';
-import { AppConfig } from '../core/config/types';
+} from "react-native";
+import { router } from "expo-router";
+import { useConfig } from "../core/config/ConfigContext";
+import { AppConfig } from "../core/config/types";
 
 const DEFAULTS: AppConfig = {
-  keycloakUrl: 'https://keycloak.example.com',
-  realm: 'home',
-  clientId: 'homelab-portal',
-  argocdUrl: 'https://argocd.example.com',
-  grafanaUrl: 'https://grafana.example.com',
+  keycloakUrl: "https://keycloak.example.com",
+  realm: "home",
+  clientId: "homelab-portal",
+  argocdUrl: "https://argocd.example.com",
+  grafanaUrl: "https://grafana.example.com",
 };
 
 type Field = { label: string; key: keyof AppConfig; placeholder: string };
 
 const FIELDS: Field[] = [
-  { label: 'Keycloak URL', key: 'keycloakUrl', placeholder: 'https://keycloak.example.com' },
-  { label: 'Realm', key: 'realm', placeholder: 'home' },
-  { label: 'Client ID', key: 'clientId', placeholder: 'homelab-portal' },
-  { label: 'ArgoCD URL', key: 'argocdUrl', placeholder: 'https://argocd.example.com' },
-  { label: 'Grafana URL', key: 'grafanaUrl', placeholder: 'https://grafana.example.com' },
+  {
+    label: "Keycloak URL",
+    key: "keycloakUrl",
+    placeholder: "https://keycloak.example.com",
+  },
+  { label: "Realm", key: "realm", placeholder: "home" },
+  { label: "Client ID", key: "clientId", placeholder: "homelab-portal" },
+  {
+    label: "ArgoCD URL",
+    key: "argocdUrl",
+    placeholder: "https://argocd.example.com",
+  },
+  {
+    label: "Grafana URL",
+    key: "grafanaUrl",
+    placeholder: "https://grafana.example.com",
+  },
 ];
 
 export default function SetupScreen() {
@@ -37,13 +49,13 @@ export default function SetupScreen() {
 
   const handleSave = async () => {
     await setConfig(form);
-    router.replace('/(auth)/login');
+    router.replace("/(auth)/login");
   };
 
   return (
     <KeyboardAvoidingView
       style={{ flex: 1 }}
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      behavior={Platform.OS === "ios" ? "padding" : undefined}
     >
       <ScrollView contentContainerStyle={styles.container}>
         <Text style={styles.title}>Configure Portal</Text>
@@ -75,25 +87,30 @@ export default function SetupScreen() {
 
 const styles = StyleSheet.create({
   container: { padding: 24, gap: 16 },
-  title: { fontSize: 26, fontWeight: 'bold', color: '#fff', marginTop: 48 },
-  subtitle: { fontSize: 14, color: '#888', marginBottom: 8 },
+  title: { fontSize: 26, fontWeight: "bold", color: "#fff", marginTop: 48 },
+  subtitle: { fontSize: 14, color: "#888", marginBottom: 8 },
   field: { gap: 6 },
-  label: { fontSize: 13, fontWeight: '600', color: '#aaa', textTransform: 'uppercase' },
+  label: {
+    fontSize: 13,
+    fontWeight: "600",
+    color: "#aaa",
+    textTransform: "uppercase",
+  },
   input: {
     borderWidth: 1,
-    borderColor: '#333',
+    borderColor: "#333",
     borderRadius: 10,
     padding: 12,
     fontSize: 15,
-    color: '#fff',
-    backgroundColor: '#1e2327',
+    color: "#fff",
+    backgroundColor: "#1e2327",
   },
   button: {
-    backgroundColor: '#3b82f6',
+    backgroundColor: "#3b82f6",
     borderRadius: 12,
     padding: 16,
-    alignItems: 'center',
+    alignItems: "center",
     marginTop: 8,
   },
-  buttonText: { color: '#fff', fontSize: 16, fontWeight: '600' },
+  buttonText: { color: "#fff", fontSize: 16, fontWeight: "600" },
 });

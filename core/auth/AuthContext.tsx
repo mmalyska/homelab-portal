@@ -1,9 +1,9 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
-import { AuthState, AuthUser, TokenSet } from './types';
-import { loadTokens, saveTokens, clearTokens } from './tokenStorage';
-import { decodeJwt, isTokenExpired, refreshTokens } from './tokenUtils';
-import { useKeycloak } from './useKeycloak';
-import { useConfig } from '../config/ConfigContext';
+import React, { createContext, useContext, useEffect, useState } from "react";
+import { AuthState, AuthUser, TokenSet } from "./types";
+import { loadTokens, saveTokens, clearTokens } from "./tokenStorage";
+import { decodeJwt, isTokenExpired, refreshTokens } from "./tokenUtils";
+import { useKeycloak } from "./useKeycloak";
+import { useConfig } from "../config/ConfigContext";
 
 const AuthContext = createContext<AuthState | null>(null);
 
@@ -76,6 +76,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
 export function useAuth() {
   const ctx = useContext(AuthContext);
-  if (!ctx) throw new Error('useAuth must be used within AuthProvider');
+  if (!ctx) throw new Error("useAuth must be used within AuthProvider");
   return ctx;
 }

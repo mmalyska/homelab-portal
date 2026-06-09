@@ -1,7 +1,7 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { AppConfig } from './types';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { AppConfig } from "./types";
 
-const CONFIG_KEY = 'app.config';
+const CONFIG_KEY = "app.config";
 
 export const saveConfig = (config: AppConfig): Promise<void> =>
   AsyncStorage.setItem(CONFIG_KEY, JSON.stringify(config));

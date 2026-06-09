@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
-import { AppConfig } from './types';
-import { loadConfig, saveConfig } from './configStorage';
+import React, { createContext, useContext, useEffect, useState } from "react";
+import { AppConfig } from "./types";
+import { loadConfig, saveConfig } from "./configStorage";
 
 type ConfigContextType = {
   config: AppConfig | null;
@@ -35,6 +35,6 @@ export function ConfigProvider({ children }: { children: React.ReactNode }) {
 
 export function useConfig() {
   const ctx = useContext(ConfigContext);
-  if (!ctx) throw new Error('useConfig must be used within ConfigProvider');
+  if (!ctx) throw new Error("useConfig must be used within ConfigProvider");
   return ctx;
 }
