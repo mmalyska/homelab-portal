@@ -19,9 +19,6 @@
     "web": {
       "bundler": "metro"
     },
-    "plugins": [
-      "expo-router",
-      "expo-web-browser"
-    ]
+    "plugins": ["expo-router", "expo-web-browser"]
   }
 }
