@@ -9,17 +9,21 @@ const KEYS = {
 };
 
 export const saveTokens = async (tokens: TokenSet): Promise<void> => {
-  await AsyncStorage.multiSet([
-    [KEYS.accessToken, tokens.accessToken],
-    [KEYS.refreshToken, tokens.refreshToken],
-    [KEYS.idToken, tokens.idToken],
-    [KEYS.expiresAt, tokens.expiresAt.toString()],
+  await Promise.all([
+    AsyncStorage.setItem(KEYS.accessToken, tokens.accessToken),
+    AsyncStorage.setItem(KEYS.refreshToken, tokens.refreshToken),
+    AsyncStorage.setItem(KEYS.idToken, tokens.idToken),
+    AsyncStorage.setItem(KEYS.expiresAt, tokens.expiresAt.toString()),
   ]);
 };
 
 export const loadTokens = async (): Promise<TokenSet | null> => {
-  const pairs = await AsyncStorage.multiGet(Object.values(KEYS));
-  const [at, rt, it, exp] = pairs.map(([, v]) => v);
+  const [at, rt, it, exp] = await Promise.all([
+    AsyncStorage.getItem(KEYS.accessToken),
+    AsyncStorage.getItem(KEYS.refreshToken),
+    AsyncStorage.getItem(KEYS.idToken),
+    AsyncStorage.getItem(KEYS.expiresAt),
+  ]);
   if (!at || !rt || !it || !exp) return null;
   return {
     accessToken: at,
@@ -29,5 +33,8 @@ export const loadTokens = async (): Promise<TokenSet | null> => {
   };
 };
 
-export const clearTokens = (): Promise<void> =>
-  AsyncStorage.multiRemove(Object.values(KEYS));
+export const clearTokens = async (): Promise<void> => {
+  await Promise.all(
+    Object.values(KEYS).map((key) => AsyncStorage.removeItem(key)),
+  );
+};

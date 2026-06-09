@@ -14,13 +14,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [accessToken, setAccessToken] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    if (!config) {
-      setIsLoading(false);
-      return;
-    }
-    initAuth();
-  }, [config]);
+  const applyTokens = async (tokens: TokenSet) => {
+    await saveTokens(tokens);
+    setAccessToken(tokens.accessToken);
+    setUser(decodeJwt(tokens.accessToken));
+  };
 
   const initAuth = async () => {
     try {
@@ -41,11 +39,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const applyTokens = async (tokens: TokenSet) => {
-    await saveTokens(tokens);
-    setAccessToken(tokens.accessToken);
-    setUser(decodeJwt(tokens.accessToken));
-  };
+  useEffect(() => {
+    void (async () => {
+      if (!config) {
+        setIsLoading(false);
+        return;
+      }
+      await initAuth();
+    })();
+  }, [config]);
 
   const login = async () => {
     const tokens = await keycloakLogin();
