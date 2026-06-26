@@ -4,6 +4,7 @@
     "github>mmalyska/renovate-config",
     "github>mmalyska/renovate-config:automerge-github-actions"
   ],
+  "timezone": "CET",
   "gitAuthor": "bendo-bot <126472327+bendo-bot[bot]@users.noreply.github.com>",
   "reviewers": ["mmalyska"],
   "packageRules": [
@@ -15,6 +16,35 @@
       "matchUpdateTypes": ["digest", "pinDigest"],
       "matchFileNames": [".devcontainer/devcontainer.json"],
       "ignoreTests": true
+    },
+    {
+      "description": "Auto merge npm patch updates",
+      "matchManagers": ["npm"],
+      "automerge": true,
+      "automergeType": "branch",
+      "matchUpdateTypes": ["patch"],
+      "minimumReleaseAge": "3 days"
+    },
+    {
+      "description": "Auto merge minor updates for dev tools (no native code)",
+      "matchManagers": ["npm"],
+      "automerge": true,
+      "automergeType": "branch",
+      "matchUpdateTypes": ["minor"],
+      "matchPackageNames": [
+        "eslint",
+        "/^eslint-.*/",
+        "/^@eslint\\/.*/",
+        "/^@eslint-.*/",
+        "prettier",
+        "typescript",
+        "/^@types\\/.*/",
+        "/^@tanstack\\/.*/",
+        "/^@typescript-eslint\\/.*/",
+        "babel-jest",
+        "jest"
+      ],
+      "minimumReleaseAge": "3 days"
     }
   ]
 }
