@@ -21,7 +21,7 @@
       "description": "Auto merge npm patch updates",
       "matchManagers": ["npm"],
       "automerge": true,
-      "automergeType": "branch",
+      "automergeType": "pr",
       "matchUpdateTypes": ["patch"],
       "minimumReleaseAge": "3 days"
     },
@@ -29,7 +29,7 @@
       "description": "Auto merge minor updates for dev tools (no native code)",
       "matchManagers": ["npm"],
       "automerge": true,
-      "automergeType": "branch",
+      "automergeType": "pr",
       "matchUpdateTypes": ["minor"],
       "matchPackageNames": [
         "eslint",
