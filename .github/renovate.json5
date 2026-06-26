@@ -6,6 +6,7 @@
   ],
   "timezone": "CET",
   "gitAuthor": "bendo-bot <126472327+bendo-bot[bot]@users.noreply.github.com>",
+  "automergeStrategy": "rebase",
   "reviewers": ["mmalyska"],
   "packageRules": [
     {
