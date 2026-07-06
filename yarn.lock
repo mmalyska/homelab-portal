@@ -3190,18 +3190,18 @@ expo-asset@~56.0.18:
     expo-constants "~56.0.19"
 
 expo-auth-session@~56.0.0:
-  version "56.0.14"
-  resolved "https://registry.yarnpkg.com/expo-auth-session/-/expo-auth-session-56.0.14.tgz#421ff2bd5d629740d51e8b75aebfcf38012b1a3b"
-  integrity sha512-b6URDBKXVWBjHwypnbCPW6A3PrwYyFqzLXtTrrpTGpmDlsxk7xuz6wIA77sBNziz3hMxt11Nu70iY0fJZYT4jA==
+  version "56.0.15"
+  resolved "https://registry.yarnpkg.com/expo-auth-session/-/expo-auth-session-56.0.15.tgz#9892c397811c1341b24aa3d32f181ada66a4bc6e"
+  integrity sha512-vviFyzIkMBkDMuWzU4SnbRq6EIHBOhUdBQIQffPl/DFLOo5k4tUpxj4YmU1viRYZH9XNP6d3R4MU2pW0GCYNWA==
   dependencies:
     expo-application "~56.0.3"
-    expo-constants "~56.0.18"
+    expo-constants "~56.0.20"
     expo-crypto "~56.0.4"
-    expo-linking "~56.0.14"
+    expo-linking "~56.0.15"
     expo-web-browser "~56.0.5"
     invariant "^2.2.4"
 
-expo-constants@~56.0.0, expo-constants@~56.0.18, expo-constants@~56.0.19, expo-constants@~56.0.20:
+expo-constants@~56.0.0, expo-constants@~56.0.19, expo-constants@~56.0.20:
   version "56.0.20"
   resolved "https://registry.yarnpkg.com/expo-constants/-/expo-constants-56.0.20.tgz#e28a4994cd552d25e01fd01546e9c19821c71a08"
   integrity sha512-4HgoVvUiMvcqujr/CUj7L1tumLWj8WX0PLM77OriDPoaJrMEwUHd841m4o4IoUyMPVT8XTiTiPFwJtGali8+9Q==
@@ -3235,12 +3235,12 @@ expo-keep-awake@~56.0.3:
   resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-56.0.3.tgz#88991b4859c77af73cf68c500839a18fe5d8febe"
   integrity sha512-CLMJXtEiMKknD3Rpm8CRwE6ZJUzu2yCEmRk1sgfHAJ1zIbuEWY3dpPDubtsnuzWm+2k6Sru+yaFbYsvPWmTiBA==
 
-expo-linking@~56.0.0, expo-linking@~56.0.14:
-  version "56.0.14"
-  resolved "https://registry.yarnpkg.com/expo-linking/-/expo-linking-56.0.14.tgz#fe3a7469c6db757d745f65f8608eb7619321c370"
-  integrity sha512-IvVQHWC+Cj4fK5qD3iEVYqpU2a4rLW0IpAAlGJ4MH+H1fyZiHh3eN6qg2WmoclOEPfYATSuEa+dQT6wfgVpXlQ==
+expo-linking@~56.0.0, expo-linking@~56.0.15:
+  version "56.0.15"
+  resolved "https://registry.yarnpkg.com/expo-linking/-/expo-linking-56.0.15.tgz#51b9899f9475c694398ecb82b3d51e24a88dbc75"
+  integrity sha512-V3tkCxHIWO624ayw2L5Nfi0/bPgYy/0MgmoQR7g3FAKF4nyAayK8IhgAInz4MZ5Ao5Bb+5uZWDdUaS4yyEb+Gw==
   dependencies:
-    expo-constants "~56.0.18"
+    expo-constants "~56.0.20"
     invariant "^2.2.4"
 
 expo-modules-autolinking@~56.0.18:
