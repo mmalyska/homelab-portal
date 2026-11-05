@@ -1,6 +1,35 @@
 {
   "name": "Homelab Portal",
-  "image": "ghcr.io/mmalyska/homelab-portal-devcontainer:main@sha256:2421eba9f3dc9d0db4c0ae943ad484544355fbc86799067166c6ae52e9e2a47b",
+  "image": "ghcr.io/mmalyska/dev-workstation:1.0.0@sha256:71335a56b4a6dd99f9105da136395963f24fd40f4832a0ce4d54e46b725e6fb5",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": false,
+      "installOhMyZsh": false,
+      "installOhMyZshConfig": false,
+      "upgradePackages": false,
+      "sudoers": false
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "24"
+    },
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17",
+      "jdkDistro": "tem"
+    },
+    "ghcr.io/nordcominc/devcontainer-features/android-sdk:2": {
+      "platform": "35",
+      "build_tools": "35.0.0",
+      "disable_openjdk_installation": true
+    }
+  },
+  "overrideFeatureInstallOrder": [
+    "ghcr.io/devcontainers/features/common-utils",
+    "ghcr.io/devcontainers/features/java",
+    "ghcr.io/nordcominc/devcontainer-features/android-sdk"
+  ],
+  "containerEnv": {
+    "MISE_DISABLE_TOOLS": "node"
+  },
   "initializeCommand": "test -f .devcontainer/devcontainer.env || cp .devcontainer/devcontainer.env.sample .devcontainer/devcontainer.env",
   "postCreateCommand": "yarn install && chezmoi init --apply https://github.com/mmalyska/dotfiles.git",
   "updateContentCommand": "yarn install",
