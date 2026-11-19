@@ -31,6 +31,42 @@
         "jest"
       ],
       "minimumReleaseAge": "3 days"
+    },
+    {
+      "description": "Expo SDK pins these to exact versions; they move with an Expo SDK upgrade (npx expo install --fix), not on their own",
+      "matchManagers": ["npm"],
+      "matchPackageNames": [
+        "react",
+        "react-dom",
+        "react-native",
+        "react-native-reanimated",
+        "react-native-worklets",
+        "react-native-safe-area-context",
+        "react-native-screens",
+        "react-native-webview",
+        "@react-native-async-storage/async-storage",
+        "@types/react"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Expo SDK upgrades: align the pinned native modules on the same branch",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["expo", "/^expo-/", "eslint-config-expo"],
+      "matchUpdateTypes": ["major"],
+      "prBodyNotes": ["Run `npx expo install --fix` on this branch and commit the result: Expo SDK upgrades move React, React Native and the native modules that Renovate leaves alone."]
+    },
+    {
+      "description": "TypeScript majors wait until typescript-eslint supports them (TypeScript 7 ships no compiler API)",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["typescript"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "description": "Skip Adoptium respins: a 4-part release such as 25.0.5.1+2 shows up as 25.0.5+100000002 and cannot be checked on a PR (android-build does not run there)",
+      "matchDepNames": ["java-jdk"],
+      "allowedVersions": "!/\\+1\\d{8}\\./"
     }
   ]
 }
